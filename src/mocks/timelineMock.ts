@@ -11,7 +11,8 @@ export const trumpTimeline: Timeline = {
       id: "1",
       title: "Formal campaign launch",
       date: "2015-06-16T07:00:00.000Z",
-      summary: "Donald Trump launched his 2016 Presidential Campaign",
+      summary:
+        'Trump formally announced his candidacy on June 16, 2015, with a campaign rally and speech at Trump Tower in New York City. In his speech, Trump drew attention to domestic issues such as illegal immigration, offshoring of American jobs, the U.S. national debt, and Islamic terrorism. The campaign slogan was announced as "Make America Great Again". Trump declared that he would self-fund his presidential campaign, and would refuse any money from donors and lobbyists. Ladbrokes offered 150/1 odds of Trump winning the presidency.',
       resources: [
         {
           id: "1",
@@ -20,6 +21,76 @@ export const trumpTimeline: Timeline = {
           location: "https://www.youtube.com/watch?v=apjNfkysjbM",
           media: "video",
           source: "C-SPAN",
+        },
+        {
+          id: "2",
+          description: "Donald Trump 2015 Presidential Campaign: Announcement",
+          location:
+            "https://en.wikipedia.org/wiki/Donald_Trump_2016_presidential_campaign#Announcement",
+          media: "article",
+          source: "Wikipedia",
+        },
+      ],
+    },
+    {
+      id: "5",
+      title:
+        'Businesses cut ties with Donald Trump over "racist" immigrant comments',
+      date: "2015-07-03T07:00:00.000Z",
+      summary:
+        "Univision announced it would no longer carry Miss USA pageant broadcasts, as did NBC. Macy's announced it would stop carrying Trump merchandise. NASCAR commented that it would no longer hold an awards ceremony at a Trump property.",
+      resources: [
+        {
+          id: "1",
+          description:
+            'NASCAR Distances Itself From Donald Trump After Immigrant "Rapist" Remarks',
+          location:
+            "https://www.hollywoodreporter.com/news/nascar-distances-donald-trump-immigrant-806742",
+          media: "article",
+          source: "Hollywood Reporter",
+        },
+        {
+          id: "2",
+          description:
+            "Univision dumps Trump, cancels Miss USA over his comments about Mexicans",
+          location:
+            "https://money.cnn.com/2015/06/25/media/univision-donald-trump-mexicans/index.html",
+          media: "article",
+          source: "CNN",
+        },
+        {
+          id: "3",
+          description:
+            "Macy's Cuts Ties with Trump: 'No Tolerance for Discrimination'",
+          location:
+            "https://www.nbcnews.com/news/latino/macys-cuts-ties-trump-n385131",
+          media: "article",
+          source: "NBC News",
+        },
+        {
+          id: "4",
+          description: "Serta Mattress Maker Latest to Dump Trump",
+          location:
+            "https://www.nbcnews.com/news/latino/serta-mattress-maker-latest-dump-trump-n385851",
+          media: "article",
+          source: "NBC News",
+        },
+      ],
+    },
+    {
+      id: "12",
+      title: "Polls show Donald Trump as the 2016 Republican front-runner",
+      date: "2015-07-09T07:00:00.000Z",
+      summary:
+        "A survey conducted by The Economist/YouGov released July 9, 2015, was the first major nationwide poll to show Trump as the 2016 Republican presidential front-runner.",
+      resources: [
+        {
+          id: "1",
+          description: "The GOP frontrunner: Donald Trump?",
+          location:
+            "https://today.yougov.com/topics/politics/articles-reports/2015/07/09/gop-frontrunner-donald-trump",
+          media: "article",
+          source: "YouGov",
         },
       ],
     },
@@ -41,6 +112,25 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
+      id: "7",
+      title:
+        "Trump proposes Muslim ban in the wake of the November Paris attacks",
+      date: "2015-11-23T07:00:00.000Z",
+      summary:
+        'Trump issued a written statement saying, "Donald J. Trump is calling for a total and complete shutdown of Muslims entering the United States until our country\'s representatives can figure out what is going on," which he repeated at subsequent political rallies.',
+      resources: [
+        {
+          id: "1",
+          description:
+            "Trump calls for ‘total and complete shutdown of Muslims entering the United States’",
+          location:
+            "https://www.washingtonpost.com/news/post-politics/wp/2015/12/07/donald-trump-calls-for-total-and-complete-shutdown-of-muslims-entering-the-united-states/",
+          media: "article",
+          source: "Washington Post",
+        },
+      ],
+    },
+    {
       id: "2034621",
       title:
         "President Donald Trump promised to put America first and restore the power of the people in his first address to the nation as president of the United States.",
@@ -54,23 +144,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/01/20/trump-vows-to-give-power-back-to-you-the-people-as-he-becomes-45th-president/21659429/",
-        },
-      ],
-    },
-    {
-      id: "2034622",
-      title:
-        "Trump signs first executive order, directing agencies to ease regulatory burdens of Obamacare",
-      date: "2017-01-20T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/20/trump-in-oval-office-signs-first-executive-order-on-obamacare/21659677/",
         },
       ],
     },
@@ -92,23 +165,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034634",
-      title:
-        "January 20th 2017, will be remembered as the day the people became the rulers of this nation again.",
-      date: "2017-01-20T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/20/trump-vows-to-give-power-back-to-you-the-people-as-he-becomes-45th-president/21659429/",
-        },
-      ],
-    },
-    {
       id: "2034624",
       title:
         "In major cities and smaller ones across the country and around the world, millions of women and men came out to protest the Trump presidency.",
@@ -126,23 +182,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034629",
-      title:
-        "President Trump's press secretary Sean Spicer slammed the news media for trying to \"lessen the enthusiasm\" of Trump's inauguration.",
-      date: "2017-01-21T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/21/trumps-press-secretary-slams-media-over-inauguration-coverage/21659993/",
-        },
-      ],
-    },
-    {
       id: "2034625",
       title:
         'Kellyanne Conway said the White House press secretary gave "alternative facts" when he inaccurately described the inauguration crowd as "the largest ever" during his first appearance before the press.',
@@ -156,40 +195,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/01/22/wh-spokesman-gave-alternative-facts-on-inauguration-crowd/21660200/",
-        },
-      ],
-    },
-    {
-      id: "2034627",
-      title:
-        "Watched protests yesterday but was under the impression that we just had an election! Why didn't these people vote? Celebs hurt cause badly.",
-      date: "2017-01-22T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://twitter.com/realDonaldTrump/status/823150055418920960",
-        },
-      ],
-    },
-    {
-      id: "2034628",
-      title:
-        "Peaceful protests are a hallmark of our democracy. Even if I don't always agree, I recognize the rights of people to express their views.",
-      date: "2017-01-22T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/22/trump-slams-women-s-march-protesters-why-didn-t-these-people-v/21660188/",
         },
       ],
     },
@@ -245,23 +250,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034630",
-      title:
-        "President Donald Trump signed two orders on Tuesday to move forward with construction of the pipelines, rolling back the Obama administration environmental policies in favor of expanding energy infrastructure.",
-      date: "2017-01-24T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/24/trump-signs-executive-order-advancing-plans-on-keystone-dakota-access-pipelines/21661654/",
-        },
-      ],
-    },
-    {
       id: "2034632",
       title:
         "If Chicago doesn't fix the horrible 'carnage' going on, 228 shootings in 2017 with 42 killings (up 24% from 2016), I will send in the Feds!",
@@ -275,23 +263,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/01/25/trump-tweets-about-chicago-carnage-threatens-to-send-in-the/21662369/",
-        },
-      ],
-    },
-    {
-      id: "2034631",
-      title:
-        "The first lady and first daughter's approval ratings were revealed in a new poll released during the first week of the Trump administration.",
-      date: "2017-01-25T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/25/new-poll-melania-and-ivanka-trump-are-more-popular-than-the-president/21662762/",
         },
       ],
     },
@@ -326,40 +297,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/01/25/trump-signs-executive-orders-on-border-wall-us-sanctuary-cities/21662394/",
-        },
-      ],
-    },
-    {
-      id: "2034633",
-      title:
-        "Ungrateful TRAITOR Chelsea Manning, who should never have been released from prison, is now calling President Obama a weak leader. Terrible!",
-      date: "2017-01-26T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/26/trump-slams-chelsea-manning-for-criticizing-obamas-presidency/21663368/",
-        },
-      ],
-    },
-    {
-      id: "2034638",
-      title:
-        "Mexican president cancels meeting with President Trump amid border controversy",
-      date: "2017-01-26T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/26/mexican-president-cancels-meeting-with-president-donald-trump/21663528/",
         },
       ],
     },
@@ -431,39 +368,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034643",
-      title: "Iran to ban US visitors in retaliation to Trump move",
-      date: "2017-01-28T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/28/iran-says-to-ban-us-visitors-in-retaliation-to-trump-move/21702255/",
-        },
-      ],
-    },
-    {
-      id: "2034644",
-      title:
-        "The failing @nytimes has been wrong about me from the very beginning. Said I would lose the primaries, then the general election. FAKE NEWS!",
-      date: "2017-01-28T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/28/trump-lashes-out-at-new-york-times-washington-post-on-twitter/21702262/",
-        },
-      ],
-    },
-    {
       id: "2034645",
       title:
         "Amid reports of refugees and visa holders being detained at airports, protests broke out across the country in cities like New York City, Seattle, Los Angeles and more.",
@@ -477,23 +381,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/01/28/hundreds-protest-donald-trumps-muslim-ban-outside-jfk-internati/21702340/",
-        },
-      ],
-    },
-    {
-      id: "2034646",
-      title:
-        "To those fleeing persecution, terror & war, Canadians will welcome you, regardless of your faith. Diversity is our strength #WelcomeToCanada",
-      date: "2017-01-28T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/28/canadas-trudeau-welcomes-refugees-airline-rejects-u-s-bound-p/21702301/",
         },
       ],
     },
@@ -532,22 +419,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034649",
-      title: "Trump puts five-year lobbying ban on his political appointees",
-      date: "2017-01-28T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/28/trump-puts-five-year-lobbying-ban-on-his-political-appointees/21702313/",
-        },
-      ],
-    },
-    {
       id: "2034650",
       title:
         "Acting Attorney General Sally Yates fired after defying White House orders",
@@ -565,90 +436,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034651",
-      title:
-        "Trump signed an order on Monday that will seek to pare back regulations by requiring agencies to cut two existing regulations for every new rule introduced.",
-      date: "2017-01-30T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/30/trump-signs-executive-order-to-slash-regulations/21703170/",
-        },
-      ],
-    },
-    {
-      id: "2034652",
-      title:
-        '"I made a promise to the American people, if I were elected president I would find the very best judge in the country for the Supreme Court," said Trump.',
-      date: "2017-01-31T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/01/31/president-trump-nominates-neil-gorsuch-to-the-supreme-court-of-the-united-states/21704505/",
-        },
-      ],
-    },
-    {
-      id: "2034654",
-      title: "Trump makes surprise trip to honor fallen US Navy SEAL",
-      date: "2017-02-01T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/01/trump-makes-surprise-trip-on-presidential-helicopter-to-honor-re/21705255/",
-        },
-      ],
-    },
-    {
-      id: "2034655",
-      title:
-        "Top adviser Michael Flynn delivered a tough warning to Iran on Wednesday after the nation test-fired a ballistic missile.",
-      date: "2017-02-01T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/01/trump-white-house-puts-iran-on-notice-over-ballistic-missile-tes/21705121/",
-        },
-      ],
-    },
-    {
-      id: "2034656",
-      title:
-        "Stephanie Winston Wolkoff, initially served as an aide to the first lady, but was formally announced as her chief of staff after confirming the first lady will definitely move to D.C.",
-      date: "2017-02-02T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/02/melania-trump-hires-lindsay-reynolds-as-chief-of-staff-addresses-washington-move/21705836/",
-        },
-      ],
-    },
-    {
       id: "2034657",
       title:
         "Homeland Security secretary says he hopes border wall will be completed in two years",
@@ -662,39 +449,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/02/02/homeland-security-secretary-hopes-border-wall-will-be-completed/21705879/",
-        },
-      ],
-    },
-    {
-      id: "2034658",
-      title: "US announces new Iran sanctions",
-      date: "2017-02-03T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/03/u-s-announces-new-iran-related-sanctions/21706534/",
-        },
-      ],
-    },
-    {
-      id: "2034659",
-      title:
-        "Trump signs executive orders igniting political fight over US banking law reforms",
-      date: "2017-02-03T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/03/president-trump-ignites-political-fight-over-us-banking-law-reforms/21706442/",
         },
       ],
     },
@@ -733,22 +487,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034663",
-      title: "Trump agrees to meet NATO leaders in Europe in May",
-      date: "2017-02-05T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/05/trump-agrees-to-meet-nato-leaders-in-europe-in-may/21707596/",
-        },
-      ],
-    },
-    {
       id: "2034662",
       title:
         "Gallup, which has tracked presidents since Eisenhower, reports only 42 percent of Americans approve of the job Trump has done so far, a new low for any president after two weeks in office.",
@@ -783,40 +521,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034665",
-      title:
-        "Sen. Elizabeth Warren was interrupted on the Senate floor Tuesday when Senate Majority Leader Mitch McConnell took issue with a speech she was giving in opposition to Sen. Jeff Sessions.",
-      date: "2017-02-07T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/07/elizabeth-warren-silenced-on-the-senate-floor-after-mitch-mcconnell-objects-coretta-scott-king/21709309/",
-        },
-      ],
-    },
-    {
-      id: "2034668",
-      title:
-        "My daughter Ivanka has been treated so unfairly by @Nordstrom. She is a great person -- always pushing me to do the right thing! Terrible!",
-      date: "2017-02-08T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/10/donald-trumps-feud-with-nordstrom-sparks-warnings-from-ethics-e/21711319/",
-        },
-      ],
-    },
-    {
       id: "2034671",
       title: "Senate confirms Sen. Sessions as attorney general",
       date: "2017-02-08T00:00-05:00",
@@ -829,23 +533,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/02/08/senate-confirms-attorney-general-nominee-sen-jeff-sessions/21710131/",
-        },
-      ],
-    },
-    {
-      id: "2034672",
-      title:
-        "I don't ever want to call a court biased, so I won't call it biased. But courts seem to be so political.",
-      date: "2017-02-08T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/08/trump-blasts-federal-judges-over-halted-travel-ban-a-bad-high-school-student-would-understand/21709750/",
         },
       ],
     },
@@ -884,23 +571,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034669",
-      title:
-        "SEE YOU IN COURT, THE SECURITY OF OUR NATION IS AT                 <BR>   STAKE!",
-      date: "2017-02-09T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/09/see-you-in-court-defiant-trump-rails-against-appeals-court-ru/21711097/",
-        },
-      ],
-    },
-    {
       id: "2034670",
       title:
         "The Emerson College poll found 49 percent of registered voters trusted Trump's team. Meanwhile only 39 percent found the media truthful.",
@@ -918,74 +588,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034673",
-      title:
-        "Trump pledges to personally bring border wall price tag 'WAY DOWN!'",
-      date: "2017-02-11T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/11/trump-pledges-to-personally-bring-border-wall-price-tag-way-down-twitter/21711928/",
-        },
-      ],
-    },
-    {
-      id: "2034675",
-      title:
-        '""I just want everybody to understand, and fully know, that the United States of America is behind Japan, our great ally, 100 percent."',
-      date: "2017-02-11T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/12/trump-reaffirms-support-for-japan-after-north-koreas-missile-la/21712201/",
-        },
-      ],
-    },
-    {
-      id: "2034674",
-      title:
-        "I know Mark Cuban well. He backed me big-time but I wasn't interested in taking all of his calls.He's not smart enough to run for president!",
-      date: "2017-02-12T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/12/trump-and-cuban-rip-into-each-other-during-morning-twitter-fight/21712252/",
-        },
-      ],
-    },
-    {
-      id: "2034676",
-      title:
-        "As the third international leader to visit Trump since his election, Trudeau talked trade and women in business with the president during their Monday meeting.",
-      date: "2017-02-13T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/13/trump-weighs-in-on-on-americas-trade-relationship-with-canada/21713134/",
-        },
-      ],
-    },
-    {
       id: "2034677",
       title: "Michael Flynn resigns as national security adviser",
       date: "2017-02-13T00:00-05:00",
@@ -998,40 +600,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/02/14/michael-flynn-resigns-as-national-security-adviser-official/21713342/",
-        },
-      ],
-    },
-    {
-      id: "2034678",
-      title:
-        "The real story here is why are there so many illegal leaks coming out of Washington? Will these leaks be happening as I deal on N.Korea etc?",
-      date: "2017-02-14T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/14/trump-real-story-flynn-resignation-illegal-leaks-media/21713793/",
-        },
-      ],
-    },
-    {
-      id: "2034679",
-      title:
-        "The U.S. president directly asked the Israeli Prime Minister to slow settlements in the West Bank during a joint press conference.",
-      date: "2017-02-15T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/15/trump-tells-netanyahu-hold-off-settlements-israel/21714762/",
         },
       ],
     },
@@ -1053,23 +621,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034681",
-      title:
-        'The president ripped into the "dishonest" and "out of control media" on Thursday while taking questions from the press at the White House.',
-      date: "2017-02-16T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/16/president-trump-rips-dishonest-media-says-administration-runs-fine-tuned-machine/21715676/",
-        },
-      ],
-    },
-    {
       id: "2034682",
       title: "Poll: Trump's approval rating sinks below 40 percent",
       date: "2017-02-17T00:00-05:00",
@@ -1082,40 +633,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/02/16/poll-trumps-approval-rating-sinks-below-40-percent/21715880/",
-        },
-      ],
-    },
-    {
-      id: "2034683",
-      title:
-        'Trump told a crowd at a Boeing planet in Charleston, South Carolina to "buy American, hire American."',
-      date: "2017-02-17T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/17/president-trump-backs-american-military-manufacturing-strength-at-boeing-plant/21716482/",
-        },
-      ],
-    },
-    {
-      id: "2034684",
-      title:
-        'President Donald Trump launched another attack aimed at "the dishonest media" in an extended rant during a rally in Melbourne, Florida, on Saturday.',
-      date: "2017-02-18T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/18/trump-launches-another-blistering-attack-on-media-while-he-and-c/21716932/",
         },
       ],
     },
@@ -1154,39 +671,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034688",
-      title:
-        "Anti-Semitism is horrible. And it's gonna stop and it has to stop.",
-      date: "2017-02-21T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/21/trump-at-african-american-history-museum-denounces-anti-semitism/21718539/",
-        },
-      ],
-    },
-    {
-      id: "2034685",
-      title: "Trump visits African American Heritage Museum",
-      date: "2017-02-21T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/21/president-trump-visits-african-american-history-museum-praises-ben-carson/21718538/",
-        },
-      ],
-    },
-    {
       id: "2034689",
       title:
         "Trump reverses Obama administration guidelines on transgender bathrooms",
@@ -1200,107 +684,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/02/23/trump-revokes-obama-guidelines-on-transgender-bathrooms/21719604/",
-        },
-      ],
-    },
-    {
-      id: "2034690",
-      title:
-        'Foreign minister says Mexico "will not accept" Trump\'s immigration proposals',
-      date: "2017-02-22T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/22/mexico-says-it-will-not-accept-trumps-new-immigration-plans/21719602/",
-        },
-      ],
-    },
-    {
-      id: "2034691",
-      title:
-        "A new report released this week reveals that the New York Police Department is spending less money than original anticipated on security for the first lady and first son who have remained in New York.",
-      date: "2017-02-23T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/23/protecting-melania-barron-trump-costing-nypd-less-than-expected/21720336/",
-        },
-      ],
-    },
-    {
-      id: "2034692",
-      title:
-        'In a rousing speech at CPAC, reminiscent of his 2016 campaign rallies, the president ripped into the media, saying he plans to "do something about it."',
-      date: "2017-02-24T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/24/trumps-cpac-speech-inspires-lock-her-up-chant-from-2016-campaign-against-hillary-clinton/21721119/",
-        },
-      ],
-    },
-    {
-      id: "2034693",
-      title: "White House blocks certain news outlets from press briefing",
-      date: "2017-02-24T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/24/white-house-blocks-multiple-news-outlets-from-press-briefing/21721210/",
-        },
-      ],
-    },
-    {
-      id: "2034694",
-      title:
-        "I will not be attending the White House Correspondents' Association Dinner this year. Please wish everyone well and have a great evening!",
-      date: "2017-02-25T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/25/trump-says-he-won-t-attend-white-house-correspondents-dinner/21721704/",
-        },
-      ],
-    },
-    {
-      id: "2034695",
-      title:
-        "The president slammed the former labor secretary after he was elected as the new DNC chair on Saturday.",
-      date: "2017-02-26T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/02/26/president-trump-dnc-chair-race-totally-rigged/21722000/",
         },
       ],
     },
@@ -1339,23 +722,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034698",
-      title:
-        'CNN commentator Van Jones is pointing to one moment in particular when the 2016 election winner "became president."',
-      date: "2017-03-01T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/01/cnn-van-jones-trump-became-president-in-honoring-navy-seal-widow-carryn-owens/21864591/",
-        },
-      ],
-    },
-    {
       id: "2034700",
       title: "Viewers strongly approve of Trump's first Congressional speech",
       date: "2017-03-01T00:00-05:00",
@@ -1385,40 +751,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/03/02/attorney-general-sessions-had-contact-with-russian-envoy-during/21871588/",
-        },
-      ],
-    },
-    {
-      id: "2034703",
-      title:
-        "\"There's no comparison whatsoever between Hillary Clinton's practice — a private server, mishandling classified information, destroying emails when they were requested by the Congress and by officials.\"",
-      date: "2017-03-03T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/03/pence-no-comparison-to-clinton-on-use-of-private-email/21873120/",
-        },
-      ],
-    },
-    {
-      id: "2034701",
-      title:
-        "The president made a major accusation against his predecessor during a lengthy Twitter storm early Saturday morning.",
-      date: "2017-03-04T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/04/this-is-nixon-watergate-trump-accuses-obama-of-wiretapping-trump-tower-during-campaign/21873351/",
         },
       ],
     },
@@ -1485,73 +817,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/03/06/house-republicans-unveil-bill-repeal-obamacare/21874749/",
-        },
-      ],
-    },
-    {
-      id: "2034708",
-      title:
-        "As an immigrant myself, having grown up in a communist society, I know all too well the value and importance of freedom and equal opportunity.",
-      date: "2017-03-08T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/09/melania-trump-talks-immigrant-status-gender-equality-at-white-house-luncheon/21877196/",
-        },
-      ],
-    },
-    {
-      id: "2034707",
-      title: "Jon Huntsman to become Russian ambassador",
-      date: "2017-03-09T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/09/reports-jon-huntsman-accepts-offer-as-russia-ambassador/21877195/",
-        },
-      ],
-    },
-    {
-      id: "2034710",
-      title:
-        "Paul Ryan gives PowerPoint presentation on GOP's Obamacare replacement",
-      date: "2017-03-09T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/09/paul-ryan-just-gave-a-powerpoint-presentation-with-rolled-up-sle/21877522/",
-        },
-      ],
-    },
-    {
-      id: "2034709",
-      title:
-        "The U.S. economy added 235,000 nonfarm payrolls in February, while the unemployment rate dipped to 4.7%.",
-      date: "2017-03-10T00:00-05:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/finance/2017/03/10/us-economy-adds-235-000-jobs-in-february/21879251/",
         },
       ],
     },
@@ -1624,40 +889,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034715",
-      title:
-        'President Donald Trump railed against what he called an "unprecedented judicial overreach" by a federal judge in Hawaii who on Wednesday.',
-      date: "2017-03-15T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/15/trump-slams-court-blocking-watered-down-travel-ban/21897204/",
-        },
-      ],
-    },
-    {
-      id: "2034719",
-      title:
-        "Republican Senator Joni Ernst has said she thinks President Trump should release his tax returns.",
-      date: "2017-03-17T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/18/republican-senator-joni-ernst-calls-for-trump-to-release-tax-returns/21902221/",
-        },
-      ],
-    },
-    {
       id: "2034716",
       title:
         "Despite what you have heard from the FAKE NEWS, I had a GREAT meeting with German Chancellor Angela Merkel",
@@ -1671,23 +902,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/03/18/trump-defends-meeting-with-merkel-against-fake-news-reports/21902238/",
-        },
-      ],
-    },
-    {
-      id: "2034720",
-      title:
-        'Trump\'s daughter Ivanka Trump sat in on what Ivanka called a "robust discussion" about workforce development with the German leader.',
-      date: "2017-03-18T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/20/photo-of-ivanka-trump-and-angela-merkel-raises-eyebrows/21903159/",
         },
       ],
     },
@@ -1725,43 +939,9 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034721",
-      title:
-        "Gorsuch: 'I would have walked out of the door' if Trump asked to overturn Roe v. Wade",
-      date: "2017-03-21T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/21/gorsuch-would-have-walked-out-door-trump-overturn-roe-v-wade/21904651/",
-        },
-      ],
-    },
-    {
       id: "2034723",
       title:
         "The White House confirmed on Tuesday that first daughter will be taking on a larger role within the administration, however she will not have an official title.",
-      date: "2017-03-21T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/21/white-house-confirms-ivanka-trump-larger-role-office-title/21904765/",
-        },
-      ],
-    },
-    {
-      id: "2034724",
-      title:
-        "President Trump signs bill authorizing NASA funding, Mars exploration",
       date: "2017-03-21T00:00-04:00",
       summary: "",
       resources: [
@@ -1860,23 +1040,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034729",
-      title:
-        "Democrats are smiling in D.C. that the Freedom Caucus, with the help of Club For Growth and Heritage, have saved Planned Parenthood & Ocare!",
-      date: "2017-03-26T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/26/trump-democrats-are-smiling-after-freedom-caucus-saved-plan/22012455/",
-        },
-      ],
-    },
-    {
       id: "2034730",
       title:
         "The president's job approval rating is lower than the lowest rating President Barack Obama saw during his entire time in office.",
@@ -1911,23 +1074,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034734",
-      title:
-        "Trump supporters on r/The_Donald demand veto of House internet privacy rule repeal",
-      date: "2017-03-29T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/29/trump-supporters-on-r-the_donald-demand-veto-of-house-internet-privacy-rule-repeal/22017215/",
-        },
-      ],
-    },
-    {
       id: "2034731",
       title:
         "President Trump's former national security adviser has told the FBI that he is willing to be interviewed in exchange for immunity from prosecution.",
@@ -1945,23 +1091,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034732",
-      title:
-        "The Freedom Caucus will hurt the entire Republican agenda if they don't get on the team, & fast. We must fight them, & Dems, in 2018!",
-      date: "2017-03-30T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/03/30/trump-directly-attacks-freedom-caucus-members-on-twitter-over-he/22019389/",
-        },
-      ],
-    },
-    {
       id: "2034735",
       title:
         "Flynn did not disclose income from Russian companies: White House",
@@ -1975,39 +1104,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/04/02/flynn-did-not-disclose-income-from-russian-companies-white-hous/22022311/",
-        },
-      ],
-    },
-    {
-      id: "2034736",
-      title:
-        "When will Sleepy Eyes Chuck Todd and @NBCNews start talking about the Obama SURVEILLANCE SCANDAL and stop with the Fake Trump/Russia story?",
-      date: "2017-04-02T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/04/01/trump-tells-nbc-news-and-sleepy-eyes-chuck-todd-to-stop-coveri/22021524/",
-        },
-      ],
-    },
-    {
-      id: "2034737",
-      title: "The clock has now run out, and all options are on the table.",
-      date: "2017-04-04T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/04/05/rex-tillerson-says-us-has-spoken-enough-after-latest-north-kor/22027003/",
         },
       ],
     },
@@ -2063,23 +1159,6 @@ export const trumpTimeline: Timeline = {
       ],
     },
     {
-      id: "2034741",
-      title:
-        "Tonight, I ordered a targeted military strike on the airfield in Syria from where the chemical attack was launched.",
-      date: "2017-04-06T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/04/07/trump-statement-on-u-s-military-strikes-in-syria/22030342/",
-        },
-      ],
-    },
-    {
       id: "2034742",
       title:
         "The U.S. fired 59 Tomahawk cruise missiles at Syria overnight in response to what it believes was a chemical weapons attack that killed more than 100 people.",
@@ -2110,23 +1189,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/04/08/president-trump-defends-syria-strike-tactics-via-twitter/22031730/",
-        },
-      ],
-    },
-    {
-      id: "2034746",
-      title:
-        "President Donald Trump — backed by advisers Ivanka Trump and Jared Kushner — is reportedly planning a centrist push in an attempt to recover from a rocky start.",
-      date: "2017-04-08T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/04/09/donald-trump-reportedly-planning-a-shift-to-the-center-as-he-tri/22032687/",
         },
       ],
     },
@@ -2327,22 +1389,6 @@ export const trumpTimeline: Timeline = {
           description: "Article",
           location:
             "https://www.aol.com/article/news/2017/04/17/melania-trump-nudges-donald-during-white-house-easter-egg-roll/22043193/",
-        },
-      ],
-    },
-    {
-      id: "2034757",
-      title: "Trump signs 'buy American, hire American' executive order",
-      date: "2017-04-18T00:00-04:00",
-      summary: "",
-      resources: [
-        {
-          id: "resource-1",
-          media: "article",
-          source: "AOL",
-          description: "Article",
-          location:
-            "https://www.aol.com/article/news/2017/04/18/trump-signs-buy-american-hire-american-executive-order-visas/22045000/",
         },
       ],
     },
