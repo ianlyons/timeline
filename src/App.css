@@ -1,38 +1,109 @@
+:root {
+  --soft-bg: #f0efeb;
+  --main-timeline: #cb997e;
+  --accent-timeline: #a5a58d;
+  --dark: #0d0a0b;
+}
+
 .App {
-  text-align: center;
+  text-align: left;
+  color: var(--dark);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: flex-state;
+  font-size: 18px;
   color: white;
+  height: 60px;
+  font-family: "Roboto Slab", serif;
+}
+
+.App-logo {
+  max-height: 80%;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Timeline-yearListItem {
+  position: relative;
+  border-left: solid var(--main-timeline) 4px;
+  padding-left: 5vw;
+  padding-top: 50px;
+  margin-left: 5vw;
+}
+
+.Timeline-yearHeader {
+  /* position: absolute; */
+  left: 5vw;
+  font-size: 2rem;
+  background-color: var(--accent-timeline);
+  color: var(--dark);
+  padding: 8px 14px;
+  border-radius: 0 15px 15px 0;
+  display: inline-block;
+  margin-left: -5vw;
+  border: solid var(--main-timeline) 1px;
+  border-left: 0;
+}
+
+.Timeline-eventsListItem {
+  /* border-left: solid #247ba0 4px; */
+  max-width: 500px;
+  padding-top: 15px;
+}
+
+.Timeline-eventsListItemContent {
+  position: relative;
+}
+
+.Timeline-eventsListItem:not(:last-child) {
+  padding-bottom: 35px;
+}
+
+.Timeline-eventsListItem:first-child {
+  padding-top: 35px;
+}
+
+.Timeline-eventsListDate {
+  display: block;
+  padding: 4px 0 8px;
+}
+
+.Timeline-eventsListBullet {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  border-radius: 16px;
+  background-color: var(--accent-timeline);
+  border: solid var(--main-timeline) 3px;
+  position: absolute;
+  left: calc(-5vw - 13px);
+  top: 0px;
+}
+
+.Event {
+  border: solid var(--dark) 1px;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.Event-header {
+  margin-bottom: 16px;
+}
+
+.Event-title {
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 18px;
+  display: inline-block;
 }
