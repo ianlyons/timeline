@@ -3,9 +3,10 @@ import groupBy from "lodash/groupBy";
 import map from "lodash/map";
 import findIndex from "lodash/findIndex";
 import compact from "lodash/compact";
+import extend from "lodash/extend";
 import { Button } from "antd";
-import { DeleteOutlined } from "@ant-design/icons";
-import { Event } from "./types/timelineTypes";
+import { DeleteOutlined, FormOutlined } from "@ant-design/icons";
+import { Event, EventUI } from "./types/timelineTypes";
 import { TimelineEvent } from "./components/TimelineEvent";
 import { trumpTimeline } from "./mocks/timelineMock";
 import "./reset.css";
@@ -14,21 +15,15 @@ import "./App.css";
 
 const IS_DEV_MODE = document.location.search.indexOf("dev=true") > -1;
 
-// const deletedEvents: any = {};
-
-// function filterEvents(events: Event[]) {
-//   return events.filter((event) => {
-//     if (deletedEvents[event.id]) return false;
-//     return true;
-//   });
-// }
-
-function structureEvents(events: Event[]) {
-  return map(
-    groupBy(events, (event: Event) => new Date(event.date).getFullYear()),
-    (events: Event[], year: string) => ({ year, events })
+function structureEvents(events: EventUI[]) {
+  return groupBy(events, (event: EventUI) =>
+    new Date(event.date).getFullYear()
   );
 }
+
+type RecursivePartial<T> = {
+  [P in keyof T]?: RecursivePartial<T[P]>;
+};
 
 const formatter = new Intl.DateTimeFormat("en-US", {
   month: "long",
@@ -36,29 +31,41 @@ const formatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
+function addInterfacePropertiesToEvents(events: Event[]): EventUI[] {
+  return events.map((e) => ({
+    ...e,
+    interface: {
+      markedForDeletion: false,
+      editing: false,
+    },
+  }));
+}
+
 function App() {
   const { title } = trumpTimeline;
-  const [eventsToDelete, setEventsToDelete] = useState<Record<string, boolean>>(
-    {}
+  const [timeline, updateTimeline] = useState(
+    addInterfacePropertiesToEvents(trumpTimeline.events.slice(0, 100))
   );
-  const [timeline, updateTimeline] = useState(trumpTimeline.events);
 
-  function updateEvent(eventUpdate: Event, opts: { doDelete: boolean }) {
+  function updateEvent(eventUpdate: RecursivePartial<EventUI>) {
     const eventIndex = findIndex(timeline, { id: eventUpdate.id });
-    if (!eventIndex)
+    if (eventIndex === -1)
       throw new Error(`Can't find event with ID ${eventUpdate.id}`);
+    console.log(timeline);
     const nextTimeline = compact([
-      ...timeline.slice(0, eventIndex - 1),
-      opts.doDelete ? null : eventUpdate,
+      ...timeline.slice(0, eventIndex),
+      extend({}, timeline[eventIndex], eventUpdate),
       ...timeline.slice(eventIndex + 1),
     ]);
+
+    console.log("next", nextTimeline);
 
     updateTimeline(nextTimeline);
   }
 
   const timelineByYear = structureEvents(timeline);
+  console.log(timelineByYear);
 
-  console.log(eventsToDelete);
   return (
     <div className="App">
       <header className="App-header">
@@ -66,31 +73,58 @@ function App() {
       </header>
       <main className="Timeline">
         <ol className="Timeline-yearList">
-          {timelineByYear.map(({ year, events }) => (
+          {map(timelineByYear, (events, year) => (
             <li className="Timeline-yearListItem" key={year}>
               <h2 className="Timeline-yearHeader">{year}</h2>
               <ol className="Timeline-eventsList">
-                {events.map((event) => (
-                  <li className="Timeline-eventsListItem" key={event.id}>
+                {events.map((event, i) => (
+                  <li
+                    className="Timeline-eventsListItem"
+                    key={`${event.id}-${i}`}
+                  >
                     <div className="Timeline-eventsListItemContent">
                       <span className="Timeline-eventsListBullet">&nbsp;</span>
                       <span className="Timeline-eventsListDate">
                         {formatter.format(new Date(event.date))}&nbsp;
                         {IS_DEV_MODE && (
-                          <Button
-                            type="dashed"
-                            icon={<DeleteOutlined />}
-                            onClick={() =>
-                              setEventsToDelete({
-                                ...eventsToDelete,
-                                [event.id]: true,
-                              })
-                            }
-                          />
+                          <span className="Timeline-eventsListControls">
+                            <Button
+                              type={
+                                event.interface.markedForDeletion
+                                  ? "primary"
+                                  : "dashed"
+                              }
+                              icon={<DeleteOutlined />}
+                              onClick={() =>
+                                updateEvent({
+                                  id: event.id,
+                                  interface: {
+                                    markedForDeletion: !event.interface
+                                      .markedForDeletion,
+                                  },
+                                })
+                              }
+                            />
+                            <Button
+                              type={
+                                event.interface.editing ? "primary" : "dashed"
+                              }
+                              icon={<FormOutlined />}
+                              onClick={() =>
+                                updateEvent({
+                                  id: event.id,
+                                  interface: {
+                                    editing: !event.interface.editing,
+                                  },
+                                })
+                              }
+                            />
+                          </span>
                         )}
                       </span>
                       <TimelineEvent
-                        deleted={eventsToDelete[event.id]}
+                        deleted={event.interface.markedForDeletion}
+                        editing={event.interface.editing}
                         updateEvent={updateEvent}
                         event={event}
                       />

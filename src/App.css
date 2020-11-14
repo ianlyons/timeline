@@ -94,6 +94,16 @@
   top: 5px;
 }
 
+.Timeline-eventsListControls {
+  margin-left: 16px;
+  display: inline-block;
+  /* width: 60px; */
+}
+
+.Timeline-eventsListControls button:not(:first-child) {
+  margin-left: 8px;
+}
+
 .Event {
   border: solid var(--dark) 1px;
   padding: 12px;
@@ -101,14 +111,13 @@
 }
 
 .Event--deleted {
-  height: 25px;
   overflow: hidden;
   background-color: #dadada;
   opacity: 0.5;
 }
 
-.Event-header {
-  margin-bottom: 16px;
+.Event-summary {
+  margin-top: 16px;
 }
 
 .Event-title {
@@ -118,7 +127,25 @@
   display: inline-block;
 }
 
+.Event-addResource {
+  margin-top: 16px;
+}
+
+.Event--editing .Event-resources {
+  margin-top: 16px;
+}
+
 /* No left-hand padding for left alignment */
 .Resources-expandButton button {
   padding-left: 0;
+}
+
+.ResourceEditor:not(:first-child) {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: solid #dadada 1px;
+}
+
+.ResourceField:not(:first-child) {
+  margin-top: 8px;
 }

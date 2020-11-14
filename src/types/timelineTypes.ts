@@ -1,6 +1,6 @@
 type URL = string;
 type DateTime = string; // ISO 8601
-type Media = "article" | "video" | "photo" | "tweet";
+export type Media = "article" | "video" | "photo" | "tweet";
 
 export interface Event {
   id: string;
@@ -8,6 +8,13 @@ export interface Event {
   summary: string;
   date: DateTime;
   resources: Resource[];
+}
+
+export interface EventUI extends Event {
+  interface: {
+    markedForDeletion: boolean;
+    editing: boolean;
+  };
 }
 
 export interface Resource {
