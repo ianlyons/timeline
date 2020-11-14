@@ -4,6 +4,7 @@ import map from "lodash/map";
 import findIndex from "lodash/findIndex";
 import compact from "lodash/compact";
 import extend from "lodash/extend";
+import omit from "lodash/omit";
 import { Button } from "antd";
 import { DeleteOutlined, FormOutlined } from "@ant-design/icons";
 import { Event, EventUI } from "./types/timelineTypes";
@@ -51,25 +52,36 @@ function App() {
     const eventIndex = findIndex(timeline, { id: eventUpdate.id });
     if (eventIndex === -1)
       throw new Error(`Can't find event with ID ${eventUpdate.id}`);
-    console.log(timeline);
     const nextTimeline = compact([
       ...timeline.slice(0, eventIndex),
       extend({}, timeline[eventIndex], eventUpdate),
       ...timeline.slice(eventIndex + 1),
     ]);
 
-    console.log("next", nextTimeline);
-
     updateTimeline(nextTimeline);
   }
 
   const timelineByYear = structureEvents(timeline);
-  console.log(timelineByYear);
+
+  function copyTimelineContents(e: React.MouseEvent) {
+    e.preventDefault();
+    const serializedTimeline = JSON.stringify(
+      timeline.map((event) => omit(event, "interface")),
+      undefined,
+      2
+    );
+    navigator.clipboard.writeText(serializedTimeline);
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>{title}</h1>
+        {IS_DEV_MODE && (
+          <span className="App-copyButton">
+            <Button onClick={copyTimelineContents}>Copy timeline</Button>
+          </span>
+        )}
       </header>
       <main className="Timeline">
         <ol className="Timeline-yearList">

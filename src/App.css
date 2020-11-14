@@ -40,6 +40,10 @@
   color: #61dafb;
 }
 
+.App-copyButton {
+  margin-left: 16px;
+}
+
 .Timeline-yearListItem {
   position: relative;
   border-left: solid var(--main-timeline) 4px;
