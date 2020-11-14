@@ -42,11 +42,15 @@ function addInterfacePropertiesToEvents(events: Event[]): EventUI[] {
   }));
 }
 
+type ResourceIdMap = Record<string, boolean>;
+
 function App() {
   const { title } = trumpTimeline;
   const [timeline, updateTimeline] = useState(
-    addInterfacePropertiesToEvents(trumpTimeline.events.slice(0, 100))
+    addInterfacePropertiesToEvents(trumpTimeline.events)
   );
+  const [editingEvents, updateEditingEvents] = useState<ResourceIdMap>({});
+  const [deletedEvents, updateDeletedEvents] = useState<ResourceIdMap>({});
 
   function updateEvent(eventUpdate: RecursivePartial<EventUI>) {
     const eventIndex = findIndex(timeline, { id: eventUpdate.id });
@@ -66,7 +70,12 @@ function App() {
   function copyTimelineContents(e: React.MouseEvent) {
     e.preventDefault();
     const serializedTimeline = JSON.stringify(
-      timeline.map((event) => omit(event, "interface")),
+      compact(
+        timeline.map((event) => {
+          if (deletedEvents[event.id]) return null;
+          return omit(event, "interface");
+        })
+      ),
       undefined,
       2
     );
@@ -102,32 +111,23 @@ function App() {
                           <span className="Timeline-eventsListControls">
                             <Button
                               type={
-                                event.interface.markedForDeletion
-                                  ? "primary"
-                                  : "dashed"
+                                deletedEvents[event.id] ? "primary" : "dashed"
                               }
                               icon={<DeleteOutlined />}
                               onClick={() =>
-                                updateEvent({
-                                  id: event.id,
-                                  interface: {
-                                    markedForDeletion: !event.interface
-                                      .markedForDeletion,
-                                  },
+                                updateDeletedEvents({
+                                  [event.id]: !deletedEvents[event.id],
                                 })
                               }
                             />
                             <Button
                               type={
-                                event.interface.editing ? "primary" : "dashed"
+                                editingEvents[event.id] ? "primary" : "dashed"
                               }
                               icon={<FormOutlined />}
                               onClick={() =>
-                                updateEvent({
-                                  id: event.id,
-                                  interface: {
-                                    editing: !event.interface.editing,
-                                  },
+                                updateEditingEvents({
+                                  [event.id]: !editingEvents[event.id],
                                 })
                               }
                             />
@@ -135,8 +135,8 @@ function App() {
                         )}
                       </span>
                       <TimelineEvent
-                        deleted={event.interface.markedForDeletion}
-                        editing={event.interface.editing}
+                        deleted={deletedEvents[event.id]}
+                        editing={editingEvents[event.id]}
                         updateEvent={updateEvent}
                         event={event}
                       />
