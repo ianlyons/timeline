@@ -1,24 +1,37 @@
 import React, { useState } from "react";
 import groupBy from "lodash/groupBy";
 import map from "lodash/map";
-import findIndex from "lodash/findIndex";
+import keyBy from "lodash/keyBy";
+import orderBy from "lodash/orderBy";
 import compact from "lodash/compact";
 import extend from "lodash/extend";
 import omit from "lodash/omit";
 import { Button } from "antd";
 import { DeleteOutlined, FormOutlined } from "@ant-design/icons";
-import { Event, EventUI } from "./types/timelineTypes";
-import { TimelineEvent } from "./components/TimelineEvent";
+import { nanoid } from "nanoid";
+import { Event } from "./types/timelineTypes";
+import { TimelineEvent, AddTimelineEvent } from "./components/TimelineEvent";
 import { trumpTimeline } from "./mocks/timelineMock";
 import "./reset.css";
 import "antd/dist/antd.css";
 import "./App.css";
+import { merge } from "lodash";
 
 const IS_DEV_MODE = document.location.search.indexOf("dev=true") > -1;
 
-function structureEvents(events: EventUI[]) {
-  return groupBy(events, (event: EventUI) =>
+function structureEvents(events: EventIdMap) {
+  return groupBy(orderBy(events, "date"), (event: Event) =>
     new Date(event.date).getFullYear()
+  );
+}
+
+function normalizeEvents(events: Event[]) {
+  return keyBy(
+    events.map((event) => {
+      event.tags = event.tags || [];
+      return event;
+    }),
+    "id"
   );
 }
 
@@ -32,48 +45,50 @@ const formatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-function addInterfacePropertiesToEvents(events: Event[]): EventUI[] {
-  return events.map((e) => ({
-    ...e,
-    interface: {
-      markedForDeletion: false,
-      editing: false,
-    },
-  }));
-}
-
 type ResourceIdMap = Record<string, boolean>;
+type EventIdMap = Record<string, Event>;
 
 function App() {
   const { title } = trumpTimeline;
-  const [timeline, updateTimeline] = useState(
-    addInterfacePropertiesToEvents(trumpTimeline.events)
+  const [timeline, updateTimeline] = useState<EventIdMap>(
+    normalizeEvents(trumpTimeline.events)
   );
   const [editingEvents, updateEditingEvents] = useState<ResourceIdMap>({});
   const [deletedEvents, updateDeletedEvents] = useState<ResourceIdMap>({});
 
-  function updateEvent(eventUpdate: RecursivePartial<EventUI>) {
-    const eventIndex = findIndex(timeline, { id: eventUpdate.id });
-    if (eventIndex === -1)
-      throw new Error(`Can't find event with ID ${eventUpdate.id}`);
-    const nextTimeline = compact([
-      ...timeline.slice(0, eventIndex),
-      extend({}, timeline[eventIndex], eventUpdate),
-      ...timeline.slice(eventIndex + 1),
-    ]);
-
+  function updateEvent(eventUpdate: RecursivePartial<Event>) {
+    if (!eventUpdate.id) throw new Error(`Event updates must have IDs.`);
+    const nextTimeline = {
+      ...timeline,
+      [eventUpdate.id]: merge({}, timeline[eventUpdate.id], eventUpdate),
+    };
+    console.log(nextTimeline);
     updateTimeline(nextTimeline);
   }
 
-  const timelineByYear = structureEvents(timeline);
+  function addEvent(afterId: string) {
+    const eventToAddAfter = timeline[afterId];
+    const initialNewEventDate = new Date(eventToAddAfter.date);
+    initialNewEventDate.setDate(initialNewEventDate.getDate() + 1);
+    const newEvent: Event = {
+      id: nanoid(),
+      title: "",
+      summary: "",
+      date: initialNewEventDate.toISOString(),
+      resources: [],
+    };
+    timeline[newEvent.id] = newEvent;
+    updateTimeline(timeline);
+    updateEditingEvents({ [newEvent.id]: true });
+  }
 
   function copyTimelineContents(e: React.MouseEvent) {
     e.preventDefault();
     const serializedTimeline = JSON.stringify(
       compact(
-        timeline.map((event) => {
+        map(timeline, (event) => {
           if (deletedEvents[event.id]) return null;
-          return omit(event, "interface");
+          return event;
         })
       ),
       undefined,
@@ -82,6 +97,7 @@ function App() {
     navigator.clipboard.writeText(serializedTimeline);
   }
 
+  const timelineByYear = structureEvents(timeline);
   return (
     <div className="App">
       <header className="App-header">
@@ -93,6 +109,11 @@ function App() {
         )}
       </header>
       <main className="Timeline">
+        <aside className="Timeline-summary">
+          <ul>
+            <li>{Object.keys(timeline).length} events</li>
+          </ul>
+        </aside>
         <ol className="Timeline-yearList">
           {map(timelineByYear, (events, year) => (
             <li className="Timeline-yearListItem" key={year}>
@@ -116,6 +137,7 @@ function App() {
                               icon={<DeleteOutlined />}
                               onClick={() =>
                                 updateDeletedEvents({
+                                  ...deletedEvents,
                                   [event.id]: !deletedEvents[event.id],
                                 })
                               }
@@ -140,6 +162,9 @@ function App() {
                         updateEvent={updateEvent}
                         event={event}
                       />
+                    </div>
+                    <div>
+                      <AddTimelineEvent addEvent={() => addEvent(event.id)} />
                     </div>
                   </li>
                 ))}

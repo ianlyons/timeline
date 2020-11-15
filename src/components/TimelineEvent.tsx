@@ -5,12 +5,14 @@ import uniqueId from "lodash/uniqueId";
 import { Button, Input, Select } from "antd";
 import {
   PlusSquareOutlined,
+  PlusOutlined,
   MinusSquareOutlined,
   DeleteOutlined,
 } from "@ant-design/icons";
 import { Resource, Event, Media } from "../types/timelineTypes";
 import { classes } from "../utils/styleUtils";
 import { nanoid } from "nanoid";
+import { ResourcePreview } from "./ResourcePreview";
 
 const { TextArea } = Input;
 
@@ -91,6 +93,7 @@ const ResourceEditor: React.FC<ResourceEditorProps> = ({
       <ResourceField
         value={value.description}
         label="Description"
+        placeholder="Description"
         onChange={(e) =>
           onChange({ ...value, description: e.currentTarget.value })
         }
@@ -98,11 +101,13 @@ const ResourceEditor: React.FC<ResourceEditorProps> = ({
       <ResourceField
         value={value.source}
         label="Source"
+        placeholder="Source"
         onChange={(e) => onChange({ ...value, source: e.currentTarget.value })}
       />
       <ResourceField
         value={value.location}
         label="Location"
+        placeholder="Location"
         onChange={(e) =>
           onChange({ ...value, location: e.currentTarget.value })
         }
@@ -137,10 +142,21 @@ export const TimelineEvent: React.FC<TimelineEventProps> = ({
   editing,
   updateEvent,
 }) => {
+  console.log(event);
   const onChange = (update: Partial<Event>) => {
     const eventUpdate = extend({ ...event }, update);
-    console.log(eventUpdate);
     updateEvent(eventUpdate);
+  };
+
+  const [localDate, updateLocalDate] = useState(event.date);
+
+  const maybeCommitDateValue = () => {
+    try {
+      const nextDate = new Date(localDate).toISOString();
+      onChange({ date: nextDate });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const onChangeResource = (updatedResource: Resource) => {
@@ -183,11 +199,22 @@ export const TimelineEvent: React.FC<TimelineEventProps> = ({
           <Input
             size="large"
             value={event.title}
+            placeholder="Event title"
             onChange={(e) => onChange({ title: e.target.value })}
+          />
+        </header>
+        <header className="Event-date">
+          <Input
+            size="small"
+            value={localDate}
+            placeholder="Date"
+            onChange={(e) => updateLocalDate(e.currentTarget.value)}
+            onBlur={maybeCommitDateValue}
           />
         </header>
         <div className="Event-summary">
           <TextArea
+            placeholder="Summarize the event"
             style={{ height: 300 }}
             value={event.summary}
             onChange={(e) => onChange({ summary: e.target.value })}
@@ -212,6 +239,7 @@ export const TimelineEvent: React.FC<TimelineEventProps> = ({
     );
   }
 
+  const firstResource = event.resources[0];
   return (
     <article className={classes("Event", deleted && "Event--deleted")}>
       <header className="Event-header">
@@ -219,6 +247,7 @@ export const TimelineEvent: React.FC<TimelineEventProps> = ({
       </header>
       {!deleted && (
         <>
+          {firstResource && <ResourcePreview resource={firstResource} />}
           <p className="Event-summary">{event.summary}</p>
           {event.resources.length && (
             <footer className="Event-resources">
@@ -228,5 +257,45 @@ export const TimelineEvent: React.FC<TimelineEventProps> = ({
         </>
       )}
     </article>
+  );
+};
+
+interface AddTimelineEventProps {
+  addEvent: () => void;
+}
+
+export const AddTimelineEvent: React.FC<AddTimelineEventProps> = ({
+  addEvent,
+}) => {
+  const [mouseOverY, updateIsMouseOverY] = useState(-1);
+  console.log(mouseOverY);
+  return (
+    <div
+      className="AddTimelineEvent"
+      role="button"
+      onClick={addEvent}
+      onMouseMove={(e) =>
+        requestAnimationFrame(() => updateIsMouseOverY(e.nativeEvent.offsetY))
+      }
+      onMouseLeave={() => setTimeout(() => updateIsMouseOverY(-1), 10)}
+    >
+      {mouseOverY > -1 && (
+        <span
+          className="AddTimelineEvent-buttonWrapper"
+          style={{
+            display: "inline-block",
+            transform: `translateY(${mouseOverY}px)`,
+            position: "relative",
+            zIndex: 999,
+          }}
+        >
+          <Button
+            type="primary"
+            shape="circle"
+            icon={<PlusOutlined className="AddTimelineEvent-button" />}
+          />
+        </span>
+      )}
+    </div>
   );
 };

@@ -1,20 +1,26 @@
 type URL = string;
 type DateTime = string; // ISO 8601
 export type Media = "article" | "video" | "photo" | "tweet";
+export enum TrumpTags {
+  IMMIGRATION = "IMMIGRATION",
+  ETHICS = "ETHICS",
+  PROTESTS = "PROTESTS",
+  RUSSIA = "RUSSIA",
+  CHINA = "CHINA",
+  NORTH_KOREA = "NORTH_KOREA",
+  TURNOVER = "TURNOVER",
+  APPROVAL_RATINGS = "APPROVAL_RATINGS",
+  MUELLER_PROBE = "MUELLER_PROBE",
+  ENCOURAGING_VIOLENCE = "ENCOURAGING_VIOLENCE",
+}
 
 export interface Event {
   id: string;
   title: string;
   summary: string;
   date: DateTime;
+  tags?: string[];
   resources: Resource[];
-}
-
-export interface EventUI extends Event {
-  interface: {
-    markedForDeletion: boolean;
-    editing: boolean;
-  };
 }
 
 export interface Resource {

@@ -53,7 +53,6 @@
 }
 
 .Timeline-yearHeader {
-  /* position: absolute; */
   left: var(--left-margin);
   font-size: 2rem;
   background-color: var(--main-timeline);
@@ -64,17 +63,16 @@
 }
 
 .Timeline-eventsListItem {
-  /* border-left: solid #247ba0 4px; */
   max-width: 500px;
   padding-top: 15px;
 }
 
-.Timeline-eventsListItemContent {
-  position: relative;
+.Timeline-addEventSpace {
+  height: 32px;
 }
 
-.Timeline-eventsListItem:not(:last-child) {
-  padding-bottom: 35px;
+.Timeline-eventsListItemContent {
+  position: relative;
 }
 
 .Timeline-eventsListItem:first-child {
@@ -152,4 +150,16 @@
 
 .ResourceField:not(:first-child) {
   margin-top: 8px;
+}
+
+.AddTimelineEvent {
+  height: 80px;
+  position: relative;
+  cursor: pointer;
+  /* negative left margin, minus half the width of the button */
+  margin-left: calc((var(--left-margin) * -1) - 18px);
+}
+
+.AddTimelineEvent-buttonWrapper {
+  transition: transform 0.1s;
 }

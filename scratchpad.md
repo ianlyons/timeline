@@ -1,7 +1,7 @@
 # labels for trump presidency timeline
 
 - protests
-- ethics controversia
+- ethics controversies
 - immigration
 - russia
 - china
@@ -9,3 +9,4 @@
 - turnover
 - approval ratings
 - mueller probe
+- encouraging violence
